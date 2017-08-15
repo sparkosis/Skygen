@@ -1,6 +1,6 @@
-Symfony Standard Edition
+SkyGen - Site Web Propulsé par Symfony 3
 ========================
-
+Developed by Mehdi Kacim <br><br>
 Welcome to the Symfony Standard Edition - a fully-functional Symfony
 application that you can use as the skeleton for your new applications.
 
