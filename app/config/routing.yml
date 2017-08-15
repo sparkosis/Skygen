@@ -1,0 +1,4 @@
+skygen:
+    resource: "@SkygenBundle/Resources/config/routing.yml"
+    prefix:   /
+
