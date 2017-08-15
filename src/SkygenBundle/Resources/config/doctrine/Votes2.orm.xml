@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity repository-class="SkygenBundle\Repository\Votes2Repository" name="SkygenBundle\Entity\Votes2"
+            table="votes2">
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="dateTimestamp" type="datetime" column="date_timestamp" nullable="false">
+            <options>
+                <option name="default">CURRENT_TIMESTAMP</option>
+            </options>
+        </field>
+        <field name="ip" type="string" column="IP" length="255" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="useragent" type="string" column="useragent" length="255" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="idVote" type="integer" column="id_vote" nullable="false">
+            <options>
+                <option name="unsigned"/>
+            </options>
+        </field>
+        <field name="user" type="string" column="user" length="255" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="support" type="boolean" column="support" nullable="false">
+            <options>
+                <option name="default">0</option>
+            </options>
+        </field>
+        <field name="oppose" type="boolean" column="oppose" nullable="false">
+            <options>
+                <option name="default">0</option>
+            </options>
+        </field>
+        <field name="neutral" type="boolean" column="neutral" nullable="false">
+            <options>
+                <option name="default">0</option>
+            </options>
+        </field>
+        <field name="comment" type="text" column="comment" length="65535" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="visible" type="boolean" column="visible" nullable="false">
+            <options>
+                <option name="default">1</option>
+            </options>
+        </field>
+    </entity>
+</doctrine-mapping>

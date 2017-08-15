@@ -67,15 +67,15 @@
             <li class="active"><a href="#">Active</a></li>
             <li><a href="#">Link</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bots IRC <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Dropdown header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
+                    <li><a href="#">HelloBot</a></li>
+                    <li><a href="#">LifeBot</a></li>
+                    <li><a href="#">StoryBot</a></li>
+                    <li><a href="#">HomeBot</a></li>
+                    <li><a href="#">Revolucio</a></li>
+
+
                 </ul>
             </li>
         </ul>
@@ -88,6 +88,25 @@
         </ul>
     </div>
 </div>
+
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-{{ label }}" role="alert">
+            <div class="container">
+                <div class="alert-icon">
+                    <i class="now-ui-icons objects_support-17"></i>
+                </div>
+                <strong>{{ message }}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">
+                                <i class="now-ui-icons ui-1_simple-remove"></i>
+                            </span>
+                </button>
+            </div>
+        </div>
+    {% endfor %}
+{% endfor %}
+
 
 
 <!-- Modal -->
@@ -160,16 +179,17 @@
                 <div class="form-group">
 
                     <div class="row">
-                        <label for="utilisateur" class="col-lg-2 control-label">Utilisateur</label>
+                        <label for="utilisateur_connexion" class="col-lg-2 control-label">Utilisateur</label>
                         <div class="col-lg-12">
-                            <input type="text" class="form-control" id="utilisateur" placeholder="Utilisateur">
+                            <input type="text" class="form-control" id="utilisateur_connexion"
+                                   placeholder="Utilisateur">
                         </div>
                     </div>
 
                     <div class="row">
-                        <label for="mdp" class="col-lg-2 control-label">Mot de passe</label>
+                        <label for="mdp_connexion" class="col-lg-2 control-label">Mot de passe</label>
                         <div class="col-lg-12">
-                            <input type="password" class="form-control" id="mdp" placeholder=".....">
+                            <input type="password" class="form-control" id="mdp_connexion" placeholder=".....">
                         </div>
                     </div>
                 </div>
@@ -178,7 +198,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-                <button type="button" class="btn btn-success">Connexion</button>
+                <button id="connexion_action" type="button" class="btn btn-success">Connexion</button>
             </div>
         </div>
     </div>
@@ -201,4 +221,37 @@
     </p>
 </div>
 </body>
+
+<script>
+    $('#connexion_action').click(function () {
+
+        var user = $('#utilisateur_connexion').val();
+        var mdp = $('#mdp_connexion').val();
+
+        if (user != '' && mdp != '') {
+
+            $.ajax({
+                type: 'POST',
+                url: '',
+                data: {
+                    user: user,
+                    mdp: mdp
+                },
+                success: function (retour, textStatus, jqXHR) {
+                    if (retour.message == "erreur") {
+
+                        swal("Error!", "You need compelete all inputs", "error")
+                    } else {
+                        swal("Succes!", "You message seeded", "success")
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus + " " + errorThrown);
+                }
+            });
+
+
+        }
+    })
+</script>
 </html>

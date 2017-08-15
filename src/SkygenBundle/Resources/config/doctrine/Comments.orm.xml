@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity repository-class="SkygenBundle\Repository\CommentsRepository" name="SkygenBundle\Entity\Comments"
+            table="comments">
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="dateTimestamp" type="datetime" column="date_timestamp" nullable="false">
+            <options>
+                <option name="default">CURRENT_TIMESTAMP</option>
+            </options>
+        </field>
+        <field name="ip" type="string" column="IP" length="255" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="useragent" type="string" column="useragent" length="255" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="user" type="string" column="user" length="255" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="type" type="string" column="type" length="255" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="software" type="string" column="software" length="255" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="version" type="string" column="version" length="255" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="text" type="text" column="text" length="65535" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="visible" type="boolean" column="visible" nullable="false">
+            <options>
+                <option name="default">1</option>
+            </options>
+        </field>
+        <field name="status" type="integer" column="status" nullable="false">
+            <options>
+                <option name="unsigned"/>
+            </options>
+        </field>
+        <field name="skygenComment" type="text" column="skygen_comment" length="65535" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+    </entity>
+</doctrine-mapping>
