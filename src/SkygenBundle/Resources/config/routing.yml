@@ -1,0 +1,3 @@
+skygen_homepage:
+    path:     /
+    defaults: { _controller: SkygenBundle:Site:index }

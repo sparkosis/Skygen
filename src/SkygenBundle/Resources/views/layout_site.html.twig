@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SkyGen</title>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="smartaddon-verification" content="936e8d43184bc47ef34e25e426c508fe"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic"
+          rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/bs.css') }}">
+
+    <script src="{{ asset('bootflat/js/site.min.js') }}"></script>
+
+    <style>
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgb(156, 156, 156);
+            border-radius: 0;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: rgb(122, 122, 122);
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: rgb(51, 51, 51);
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        img.responsive {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        #footer {
+            background-color: #669ed7;
+            text-align: center;
+            bottom: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="navbar navbar-default">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">SkyGen
+        </a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Active</a></li>
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Dropdown header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                </ul>
+            </li>
+        </ul>
+        <form class="navbar-form navbar-left">
+            <input type="text" class="form-control col-lg-8" placeholder="Search">
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a data-toggle="modal" data-target="#modal_inscription" id="inscription">Inscription</a></li>
+            <li><a data-toggle="modal" data-target="#modal_connexion" id="connexion">Connexion</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal_inscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Inscription</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+
+
+                    <div class="row">
+                        <label for="email" class="col-lg-2 control-label">Email</label>
+                        <div class="col-lg-12">
+                            <input type="text" class="form-control" id="email" placeholder="E-mail">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="utilisateur" class="col-lg-2 control-label">Utilisateur</label>
+                        <div class="col-lg-12">
+                            <input type="text" class="form-control" id="utilisateur" placeholder="Utilisateur">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="mdp" class="col-lg-2 control-label">Mot de passe</label>
+                        <div class="col-lg-12">
+                            <input type="password" class="form-control" id="mdp" placeholder=".....">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <label for="mdp2" class="col-lg-2 control-label">Confirmer le mot de passe</label>
+                        <div class="col-lg-12">
+                            <input type="password" class="form-control" id="mdp2" placeholder=".....">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-success">S'inscrire</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal_connexion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+
+                    <div class="row">
+                        <label for="utilisateur" class="col-lg-2 control-label">Utilisateur</label>
+                        <div class="col-lg-12">
+                            <input type="text" class="form-control" id="utilisateur" placeholder="Utilisateur">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label for="mdp" class="col-lg-2 control-label">Mot de passe</label>
+                        <div class="col-lg-12">
+                            <input type="password" class="form-control" id="mdp" placeholder=".....">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-success">Connexion</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% block contenu %}
+{% endblock %}
+
+
+<div id="footer">
+    <p>
+        <a href="http://skygen.alwaysdata.net/fr/Legal.php">Mentions légales et conditions d'utilisation</a> - <a
+                href="http://skygen.alwaysdata.net/fr/Thanks.php">Remerciments</a> - <a
+                href="http://skygen.alwaysdata.net/fr/Comments.php">Commentaires</a><br>
+        Le site et les logiciels de SkyGen sont sous licence <a
+                href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/">CC BY-NC-SA 3.0</a> (sauf mention
+        contraire), en cas de redistribution du site ou des logiciels, vous devez indiquer qu'il s'agit d'une variante
+        d'un logiciel de SkyGen et il est interdit de revendre un logiciel de SkyGen.
+    </p>
+</div>
+</body>
+</html>
