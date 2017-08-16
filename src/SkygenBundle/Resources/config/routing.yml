@@ -1,3 +1,7 @@
 skygen_homepage:
     path:     /
     defaults: { _controller: SkygenBundle:Site:index }
+
+skygen_teste:
+    path:    /teste
+    defaults: { _controller: SkygenBundle:Site:teste }

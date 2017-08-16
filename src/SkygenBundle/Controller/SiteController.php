@@ -4,7 +4,7 @@ namespace SkygenBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\BrowserKit\Request;
-
+use Symfony\Component\HttpFoundation\Response;
 
 
 class SiteController extends Controller
@@ -23,5 +23,10 @@ class SiteController extends Controller
             $this->addFlash('danger', 'Accès interdit !');
             return $this->redirectToRoute('skygen_homepage');
         }
+    }
+
+    public function testeAction()
+    {
+        return new Response('Teste');
     }
 }
